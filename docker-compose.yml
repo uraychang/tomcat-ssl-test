@@ -1,0 +1,10 @@
+tomcat:
+  image: tomcat:8.5-jre8
+  ports:
+    - "81:8080"
+  container_name: ssl-test
+  volumes:
+    - ./logs/:/usr/local/tomcat/logs/
+    - ./index.html:/usr/local/tomcat/webapps/ssl-test/index.html
+    - ./server.xml:/usr/local/tomcat/conf/server.xml
+    - ./.keystore:/usr/local/tomcat/conf/.keystore
